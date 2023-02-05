@@ -99,6 +99,13 @@ public class TextoDAO {
 			return textos;
 	}
 	
+	public void atualizarTexto() {
+		
+	}
+	
+	
+	
+	
 	public void cadastrarUsuario(Usuario u) {
 		
 		String sql = "INSERT INTO login(nome, usuario, senha) VALUES (?, ?, ?)";

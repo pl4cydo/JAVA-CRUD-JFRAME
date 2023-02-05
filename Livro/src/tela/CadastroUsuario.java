@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -15,7 +16,7 @@ import javax.swing.border.EmptyBorder;
 import model.Usuario;
 import textoDAO.TextoDAO;
 
-public class CadastroUsuario extends JFrame {
+public class CadastroUsuario extends JDialog {
 
 	private JPanel contentPane;
 	private JTextField textNome;
@@ -45,6 +46,7 @@ public class CadastroUsuario extends JFrame {
 		setTitle("Cadastro");
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
+		setModal(true);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 

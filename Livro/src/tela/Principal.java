@@ -68,6 +68,18 @@ public class Principal extends JFrame {
 		
 		JMenuItem mntmVisualizarTextos = new JMenuItem("Visualizar Textos");
 		mnOpes.add(mntmVisualizarTextos);
+		
+		JMenu mnSaksda = new JMenu("saksda");
+		mnOpes.add(mnSaksda);
+		
+		JMenuBar menuBar_1 = new JMenuBar();
+		mnOpes.add(menuBar_1);
+		
+		JMenu mnNewMenu = new JMenu("New menu");
+		menuBar_1.add(mnNewMenu);
+		
+		JMenu menu = new JMenu("New menu");
+		menuBar_1.add(menu);
 		mntmVisualizarTextos.addActionListener(new visu());
 		
 		JMenu mnAjuda = new JMenu("Ajuda");
@@ -148,6 +160,4 @@ public class Principal extends JFrame {
 		}
 		
 	}
-	
-	
 }
