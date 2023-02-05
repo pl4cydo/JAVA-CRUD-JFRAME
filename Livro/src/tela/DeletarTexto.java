@@ -17,7 +17,7 @@ import model.Texto;
 //import tela.Visualizar.buscar;
 import textoDAO.TextoDAO;
 
-public class AtualizarTexto extends JFrame {
+public class DeletarTexto extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtBuscarTexto;
@@ -35,10 +35,10 @@ public class AtualizarTexto extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AtualizarTexto frame = new AtualizarTexto();
+					DeletarTexto frame = new DeletarTexto();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace(); 
+					e.printStackTrace();
 				}
 			}
 		});
@@ -47,8 +47,8 @@ public class AtualizarTexto extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public AtualizarTexto() {
-		setTitle("Atualizar");
+	public DeletarTexto() {
+		setTitle("Deletar");
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		setSize(800,600);
@@ -114,14 +114,14 @@ public class AtualizarTexto extends JFrame {
 		contentPane.add(panel_2);
 		panel_2.setLayout(null);
 		
-		JLabel lblNewLabel_1 = new JLabel("Alterar");
+		JLabel lblNewLabel_1 = new JLabel("Deletar");
 		lblNewLabel_1.setBounds(26, 12, 70, 15);
 		panel_2.add(lblNewLabel_1);
 		
 		JButton btnConfirm = new JButton("Confirm");
 		btnConfirm.setBounds(24, 40, 117, 25);
 		panel_2.add(btnConfirm);
-		btnConfirm.addActionListener(new alterar());
+		btnConfirm.addActionListener(new deletar());
 	}
 	
 	private class buscar implements ActionListener{
@@ -147,19 +147,13 @@ public class AtualizarTexto extends JFrame {
 		
 	}
 	
-	private class alterar implements ActionListener {
+	private class deletar implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			TextoDAO tx = new TextoDAO();
-			Texto t = new Texto();
-			t.setId(tempID);
-			t.setTitulo(textTitulo.getText());
-			t.setTema(textTema.getText());
-			t.setTexto(textArea.getText());
-			
-			tx.atualizarTexto(t);
+			tx.deletarTexto(tempID);
 		}
 		
 	}

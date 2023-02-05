@@ -32,7 +32,7 @@ public class Visualizar extends JFrame {
 	private JLabel lblNewLabel_2;
 	private JLabel lblNewLabel_2_1;
 	private JLabel lblNewLabel_2_2;
-	private JLabel lblNewLabel_2_3;
+	private JLabel lblNewLabel_2_3; 
 	
 	public static boolean boo = false;
 
@@ -58,7 +58,7 @@ public class Visualizar extends JFrame {
 	 */
 	public Visualizar() {
 		setTitle("Visualizar Textos");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		setSize(800,600);
 		contentPane = new JPanel();

@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
@@ -16,7 +17,6 @@ import javax.swing.border.EmptyBorder;
 
 import model.Texto;
 import textoDAO.TextoDAO;
-import javax.swing.JMenuItem;
 
 public class Principal extends JFrame {
 
@@ -38,7 +38,7 @@ public class Principal extends JFrame {
 				try {
 					Principal frame = new Principal();
 					frame.setVisible(true);
-				} catch (Exception e) {
+				} catch (Exception e) { 
 					e.printStackTrace();
 				}
 			}
@@ -68,10 +68,15 @@ public class Principal extends JFrame {
 		
 		JMenuItem mntmVisualizarTextos = new JMenuItem("Visualizar Textos");
 		mnOpes.add(mntmVisualizarTextos);
-		
-		JMenuBar menuBar_1 = new JMenuBar();
-		mnOpes.add(menuBar_1);
 		mntmVisualizarTextos.addActionListener(new visu());
+		
+		JMenuItem mntmDeletarTextos = new JMenuItem("Deletar Textos");
+		mnOpes.add(mntmDeletarTextos);
+		mntmDeletarTextos.addActionListener(new dele());
+		
+		JMenuItem mntmAlterarTextos = new JMenuItem("Alterar Textos");
+		mnOpes.add(mntmAlterarTextos);
+		mntmAlterarTextos.addActionListener(new alt());
 		
 		JMenu mnAjuda = new JMenu("Ajuda");
 		menuBar.add(mnAjuda);
@@ -147,6 +152,29 @@ public class Principal extends JFrame {
 			// TODO Auto-generated method stub
 			Visualizar vi = new Visualizar();
 			vi.setVisible(true);
+			
+		}
+		
+	}
+	
+	private class dele implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			DeletarTexto dt = new DeletarTexto();
+			dt.setVisible(true);
+		}
+		
+	}
+	
+	private class alt implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			AtualizarTexto at = new AtualizarTexto();
+			at.setVisible(true);
 			
 		}
 		

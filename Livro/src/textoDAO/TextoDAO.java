@@ -133,6 +133,39 @@ public class TextoDAO {
 	}
 	
 	
+	public void deletarTexto(Long id) {
+		
+		String sql = "DELETE FROM Texto WHERE id = ?";
+		
+		Connection conn = null;
+		
+		PreparedStatement pstm = null;
+		
+		try {
+			conn = ConnectionFac.createConnection();
+			
+			pstm = (PreparedStatement) conn.prepareStatement(sql);
+			pstm.setLong(1, id);
+			pstm.execute();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstm!=null) {
+					pstm.close(); 
+				}
+				
+				if(conn!=null) {
+					conn.close();
+				}
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	
+	
 	
 	
 	public void cadastrarUsuario(Usuario u) {
