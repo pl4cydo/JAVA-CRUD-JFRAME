@@ -32,7 +32,7 @@ public class Visualizar extends JFrame {
 	private JLabel lblNewLabel_2;
 	private JLabel lblNewLabel_2_1;
 	private JLabel lblNewLabel_2_2;
-	private JLabel lblNewLabel_2_3; 
+	private JLabel lblNewLabel_2_3;
 	
 	public static boolean boo = false;
 
@@ -121,38 +121,38 @@ public class Visualizar extends JFrame {
 		contentPane.add(panel_2);
 		panel_2.setLayout(null);
 		
-		JLabel lblNewLabel_1 = new JLabel("Alguns textos salvos");
-		lblNewLabel_1.setBounds(0, 0, 159, 15);
-		panel_2.add(lblNewLabel_1);
+//		JLabel lblNewLabel_1 = new JLabel("Alguns textos salvos");
+//		lblNewLabel_1.setBounds(0, 0, 159, 15);
+//		panel_2.add(lblNewLabel_1);
+//		
+//		lblNewLabel_2 = new JLabel("New label");
+//		lblNewLabel_2.setBounds(10, 23, 198, 15);
+//		panel_2.add(lblNewLabel_2);
+//		
+//		lblNewLabel_2_1 = new JLabel("New label");
+//		lblNewLabel_2_1.setBounds(10, 40, 198, 15);
+//		panel_2.add(lblNewLabel_2_1);
+//		
+//		lblNewLabel_2_2 = new JLabel("New label");
+//		lblNewLabel_2_2.setBounds(229, 23, 198, 15);
+//		panel_2.add(lblNewLabel_2_2);
+//		
+//		lblNewLabel_2_3 = new JLabel("New label");
+//		lblNewLabel_2_3.setBounds(229, 40, 198, 15);
+//		panel_2.add(lblNewLabel_2_3);
 		
-		lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setBounds(10, 23, 198, 15);
-		panel_2.add(lblNewLabel_2);
-		
-		lblNewLabel_2_1 = new JLabel("New label");
-		lblNewLabel_2_1.setBounds(10, 40, 198, 15);
-		panel_2.add(lblNewLabel_2_1);
-		
-		lblNewLabel_2_2 = new JLabel("New label");
-		lblNewLabel_2_2.setBounds(229, 23, 198, 15);
-		panel_2.add(lblNewLabel_2_2);
-		
-		lblNewLabel_2_3 = new JLabel("New label");
-		lblNewLabel_2_3.setBounds(229, 40, 198, 15);
-		panel_2.add(lblNewLabel_2_3);
-		
-		carregar();
+//		carregar();
 	}
 	
-	public void carregar() {
-		TextoDAO t = new TextoDAO();
-		List<Texto> tsdf = t.mostrarTexto();
-		
-		lblNewLabel_2.setText(tsdf.get(0).getTitulo());
-		lblNewLabel_2_1.setText(tsdf.get(1).getTitulo());
-		lblNewLabel_2_2.setText(tsdf.get(2).getTitulo());
-		lblNewLabel_2_3.setText(tsdf.get(3).getTitulo());
-	}
+//	public void carregar() {
+//		TextoDAO t = new TextoDAO();
+//		List<Texto> tsdf = t.mostrarTexto();
+//		
+//		lblNewLabel_2.setText(tsdf.get(0).getTitulo());
+//		lblNewLabel_2_1.setText(tsdf.get(1).getTitulo());
+//		lblNewLabel_2_2.setText(tsdf.get(2).getTitulo());
+//		lblNewLabel_2_3.setText(tsdf.get(3).getTitulo());
+//	}
 	
 	private class buscar implements ActionListener{
  
@@ -162,10 +162,10 @@ public class Visualizar extends JFrame {
 			TextoDAO t = new TextoDAO();
 			List<Texto> tsdf = t.mostrarTexto();
 			
-			lblNewLabel_2.setText(tsdf.get(0).getTitulo());
-			lblNewLabel_2_1.setText(tsdf.get(1).getTitulo());
-			lblNewLabel_2_2.setText(tsdf.get(2).getTitulo());
-			lblNewLabel_2_3.setText(tsdf.get(3).getTitulo());
+//			lblNewLabel_2.setText(tsdf.get(0).getTitulo());
+//			lblNewLabel_2_1.setText(tsdf.get(1).getTitulo());
+//			lblNewLabel_2_2.setText(tsdf.get(2).getTitulo());
+//			lblNewLabel_2_3.setText(tsdf.get(3).getTitulo());
 			
 			for(int i = 0; i < tsdf.size(); i++) {
 				if(tsdf.get(i).getTitulo().equals(textField.getText())) {
