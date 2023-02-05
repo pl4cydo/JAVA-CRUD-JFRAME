@@ -155,7 +155,7 @@ public class Visualizar extends JFrame {
 	}
 	
 	private class buscar implements ActionListener{
-
+ 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub

@@ -99,7 +99,36 @@ public class TextoDAO {
 			return textos;
 	}
 	
-	public void atualizarTexto() {
+	public void atualizarTexto(Texto txt) {
+		String sql = "UPDATE Texto SET titulo = ?, tema = ?, texto = ? " + "WHERE id = ?";
+		
+		Connection conn = null;
+		PreparedStatement pstm = null;
+		
+		try {
+			conn = ConnectionFac.createConnection();
+			
+			pstm = (PreparedStatement) conn.prepareStatement(sql);
+			pstm.setString(1, txt.getTitulo());
+			pstm.setString(2, txt.getTema());
+			pstm.setString(3, txt.getTexto());
+			pstm.setLong(4, txt.getId());
+			pstm.execute();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(pstm!=null) {
+					pstm.close(); 
+				}
+				
+				if(conn!=null) {
+					conn.close();
+				}
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
 		
 	}
 	
