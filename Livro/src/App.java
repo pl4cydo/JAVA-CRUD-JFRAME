@@ -1,6 +1,6 @@
 import javax.swing.SwingUtilities;
 
-import tela.Principal;
+import tela.Login;
 
 //import tela.Cadastro;
 //import tela.Tela;
@@ -13,7 +13,7 @@ public class App {
             
             @Override
             public void run(){
-            	Principal vt = new Principal();
+            	Login vt = new Login();
                 vt.setVisible(true);
             }
 

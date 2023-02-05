@@ -33,6 +33,8 @@ public class Visualizar extends JFrame {
 	private JLabel lblNewLabel_2_1;
 	private JLabel lblNewLabel_2_2;
 	private JLabel lblNewLabel_2_3;
+	
+	public static boolean boo = false;
 
 	
 	/**

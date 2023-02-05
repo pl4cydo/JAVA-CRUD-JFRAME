@@ -1,25 +1,22 @@
 package tela;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
 import javax.swing.border.EmptyBorder;
 
 import model.Texto;
 import textoDAO.TextoDAO;
-
-import javax.swing.JMenuBar;
-import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.JMenuItem;
-import javax.swing.JMenu;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JTextPane;
-import javax.swing.JButton;
 
 public class Principal extends JFrame {
 
@@ -28,6 +25,7 @@ public class Principal extends JFrame {
 	private JTextField textField_1;
 	private JTextPane textPane;
 	private JLabel lblNewLabel;
+	
 	
 	private TextoDAO td = new TextoDAO();
 
@@ -67,6 +65,10 @@ public class Principal extends JFrame {
 		
 		JMenu mnOpes = new JMenu("Opções");
 		menuBar.add(mnOpes);
+		
+		JMenuItem mntmVisualizarTextos = new JMenuItem("Visualizar Textos");
+		mnOpes.add(mntmVisualizarTextos);
+		mntmVisualizarTextos.addActionListener(new visu());
 		
 		JMenu mnAjuda = new JMenu("Ajuda");
 		menuBar.add(mnAjuda);
@@ -114,13 +116,14 @@ public class Principal extends JFrame {
 		lblNewLabel.setBounds(247, 458, 390, 15);
 		panel.add(lblNewLabel);
 		btnEnviar.addActionListener(new enviar());
+		
 	}
 	
 	private class enviar implements ActionListener{
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
+			// TODO Auto-geneimport javax.swing.JDialog;rated method stub
 			Texto t = new Texto();
 			t.setTitulo(textField.getText());
 			t.setTema(textField_1.getText());
@@ -130,13 +133,21 @@ public class Principal extends JFrame {
 				lblNewLabel.setText(textField.getText() + " foi salvo.");
 			} catch (Exception el) {
 				el.printStackTrace();
-			}
+			}	
+		}
+	}
+	
+	private class visu implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			Visualizar vi = new Visualizar();
+			vi.setVisible(true);
 			
 		}
 		
-		
 	}
-	
 	
 	
 }
