@@ -10,7 +10,7 @@ create table Texto(
     primary key(id)
 );
 select * from Texto where titulo like "Teste";
-select * from Texto;
+select * from Texto; 
 create table login(
 	id int auto_increment not null,
     nome varchar(255),
